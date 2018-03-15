@@ -1,36 +1,20 @@
 {
-  "skillManifest": {
+  "manifest": {
     "publishingInformation": {
       "locales": {
-        "en-US": {
-          "summary": "Learn fun facts about space.",
+        "de-DE": {
+          "summary": "Zeig das nächste Schwimmtraining",
           "examplePhrases": [
-            "Alexa open space facts",
-            "Alexa ask space facts for a fact",
-            "Alexa tell space facts to tell me trivia"
+            "Alexa öffne Schwimmtraining",
+            "Alexa frage Schwimmtraining nach dem nächsten Training",
+            "Alexa sage Schwimmtraining wann ist Training"
           ],
           "keywords": [
-            "space",
-            "facts",
-            "trivia"
+            "schwimmen",
+            "training"
           ],
-          "name": "Space Facts",
-          "description": "Ask for Space Facts, and learn about what really matters, like dark matter.\n\nSpace Facts provides fun the whole family can enjoy and is guaranteed to make you smarter.\n\nTo start, just say \"Alexa, launch Space Facts\" or \"Alexa, open Space Facts\" to get a fact\".\n\nAt anytime, you can stop by saying \"Alexa, stop\""
-        },
-        "en-GB": {
-          "summary": "Listen to My Radio, less bla bla bla, more la la la.",
-          "examplePhrases": [
-            "Alexa, open My Radio",
-            "Alexa, play My Radio",
-            "Alexa, ask My Radio to play"
-          ],
-          "keywords": [
-            "music",
-            "streaming",
-            "radio"
-          ],
-          "name": "My Radio",
-          "description": "Listen to My Radio, with less bla bla bla, and more la la la.\n\nMy Radio provides a high quality sound 24/7 with the best music.\n\nTo start, just say \"Alexa, launch My Radio\" or \"Alexa, play my radio\" to start the radio\".\n\nAt anytime, you can stop the radio by saying \"Alexa, stop\""
+          "name": "Schwimmtraining",
+          "description": "Frage nach den Trainingsterminen.\n\nZum Starten sage einfach \"Alexa, starte Schwimmtraining\" oder \"Alexa, öffne Schwimmtraining\".\n\nZum Beenden kannst Du jederzeit \"Alexa, stop\" sagen"
         }
       },
       "isAvailableWorldwide": true,
