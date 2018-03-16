@@ -5,19 +5,18 @@
         "de-DE": {
           "summary": "Zeig das nächste Schwimmtraining",
           "examplePhrases": [
-            "Alexa öffne Schwimmtraining",
-            "Alexa frage Schwimmtraining nach dem nächsten Training",
-            "Alexa sage Schwimmtraining wann ist Training"
+            "Alexa frage Schwimmen nach dem nächsten Training",
+            "Alexa sage Schwimmen wann ist Training"
           ],
           "keywords": [
             "schwimmen",
             "training"
           ],
           "name": "Schwimmtraining",
-          "description": "Frage nach den Trainingsterminen.\n\nZum Starten sage einfach \"Alexa, starte Schwimmtraining\" oder \"Alexa, öffne Schwimmtraining\".\n\nZum Beenden kannst Du jederzeit \"Alexa, stop\" sagen"
+          "description": "Frage nach den Trainingsterminen."
         }
       },
-      "isAvailableWorldwide": true,
+      "isAvailableWorldwide": false,
       "testingInstructions": "Sample Testing Instructions.",
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
