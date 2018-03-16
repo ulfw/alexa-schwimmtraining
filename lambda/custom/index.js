@@ -17,7 +17,7 @@ const Alexa = require('alexa-sdk');
 
 //Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.
 //Make sure to enclose your value in quotes, like this: const APP_ID = 'amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1';
-const APP_ID = '';
+const APP_ID = 'amzn1.ask.skill.185fd685-e094-45e9-9a63-f89c4ba194b0';
 
 const SKILL_NAME = 'nächstes Training';
 const GET_MESSAGE = 'Das nächste Training ist';
@@ -44,21 +44,32 @@ const handlers = {
         this.emit('NextTraining');
     },
     'NextTraining': function () {
-        var item,
-            d = new Date(),
-            currentDate = parseInt(d.getTime()/1000);
+        var lastEventOfWeek=0;
+        termine.forEach(function(item){
+            if(item.timestamp > lastEventOfWeek){
+                lastEventOfWeek = item.timestamp;
+            }
+        });
+
+        var item, d = new Date();
+        var currentDate = parseInt(d.getTime()/1000);
         d.setDate(d.getDate() - d.getDay());
+        var lastEventOfWeekTimestamp = parseInt(d.getTime()/1000) + parseInt(lastEventOfWeek);
+
+        if(currentDate > lastEventOfWeekTimestamp){
+            d.setDate(d.getDate() + (7 - d.getDay()));
+        }
         d.setHours(0,0,0,0);
         var weekStart = parseInt(d.getTime()/1000);
+
         for (var i=0; i < termine.length; i++) {
             item = termine[i];
-            if (currentDate < (weekStart + parseInt(termine[i].timestamp))) {
-                break;
-            }
+            var trainingTimestamp = (parseInt(weekStart) + parseInt(item.timestamp));
+            if (currentDate < trainingTimestamp) break;
         }
 
-        const termin = termine[i];
-        const speechOutput = GET_MESSAGE + " " + termin.message + " : " + currentDate + " : " + weekStart + " : " + termin.timestamp;
+        const termin = item;
+        const speechOutput = GET_MESSAGE + " " + termin.message;
 
         this.response.speak(speechOutput);
         this.emit(':responseReady');
